@@ -21,4 +21,10 @@ just like arrays they use [] and can be change once set and be added onto
 # tuple
   tuple use () instead and cannot be changed once set 
   
+# Strings
+  Youtuber = Hero
   
+  '{}'.format(Youtuber)
+  >Hero
+  f'{Youtuber}'
+  >Hero
