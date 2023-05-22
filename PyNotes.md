@@ -5,7 +5,6 @@ chmod +x (file)
 ./(file) 
 must have 
 #!/usr/bin/python3
-
 muteable can change has same id
 
 
