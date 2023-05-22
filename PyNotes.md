@@ -1,8 +1,8 @@
-use vim to edit and script\n
-.vimrc is the vim options\n
+use vim to edit and script
+.vimrc is the vim options
 
-chmod +x (file)\n
-./(file) \n
-must have \\/\n
-\#!/usr/bin/python3\n
+chmod +x (file)
+./(file) 
+must have 
+#!/usr/bin/python3
 
