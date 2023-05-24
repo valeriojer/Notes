@@ -55,7 +55,8 @@
 # range()
   list(range(start,end but not includeing,counting by))
   
-# ord 
+# Bin
+  ord()
   decimal value of a char
   a = 97
  bin(ord(Char))
@@ -71,4 +72,24 @@
   
   chr(97) 
   a
+  
+# FileIO
+  fp = open('myfile.txt')
+  fp = close()
+  
+  with open('myfile.txt', 'r') as fp:
+    print(fp.read(*wordcount*)*[:50]*)
+    print(fp.readlines()*[2]*)
+  
+  
+  with open('myfile.txt', 'w') as fp:
+    fp.write('write here')
+    lines = ['He', 'll', 'o', 'World']
+    fp.writelines(lines)
+   
+    #copying a file under a new name
+  
+  with open('myfile.txt', 'r') as fp0:
+    with open('NEWfile.txt', 'w') as fp1:
+      fp1.write(fp0.read())  
   
