@@ -1,3 +1,37 @@
+ 1 #!/usr/bin/env python3
+  2 def invert(l):
+  3     '''Inverts the given list
+  4     Args:
+  5         l (list): list of strings representing integers in the range [0-255]
+  6     Returns:
+  7         None
+  8     '''
+  9     counter = 0
+ 10     for pixel in l:
+ 11         l[counter] = str(255 -int(pixel))
+ 12         counter += 1
+ 13     return
+ 14 def inverted(l):
+ 15     '''Returns a new list that is the given list inverted
+ 16     Args:
+ 17         l (list): list of strings representing integers in the range [0-255]
+ 18     Returns:
+ 19         list: new list that is the given list inverted
+ 20     '''
+ 21     
+ 22     newlst = []
+ 23     counter = 0
+ 24     for pixel in l:
+ 25         newlst.append(l[counter])
+ 26         counter += 1
+ 27     invert(newlst)
+ 28     return newlst
+ 29 
+ 30 
+ 31 if __name__ == '__main__':
+ 32     pass
+
+
 
  #!/usr/bin/env python3
   2 
