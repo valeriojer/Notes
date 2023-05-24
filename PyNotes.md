@@ -92,4 +92,39 @@
   with open('myfile.txt', 'r') as fp0:
     with open('NEWfile.txt', 'w') as fp1:
       fp1.write(fp0.read())  
+# Sets
+  not orgizaned 
+  can only read not change
+  cant have more than one
+  s = {1,2,3,4,5}
+  3 in s 
+    true
+  9 in s
+    false
+  s.add()
+  s.discard()
+  s.union(s1)
+  s.difference(s1)
+  s.intersection(s1)
+  
+# Dict
+  Dict = {'E-1':'PVT', 'E-2':'PFC', 'E-3':'LCPL'}
+  
+  for i in Dict
+  e-1
+  e-2
+  e-3
+  for i in Dict
+    print(Dict[i])
+  pvt
+  pfc
+  lcp
+  
+  #Counts all the letters in a str
+  myDict = {}
+  for i in myStr:
+    if i in myDict:
+        myDict[i] += 1
+    else:
+        myDict[i] = 1
   
