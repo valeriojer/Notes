@@ -38,8 +38,10 @@
   ''.join(youtuber) #joins the list of youtuber onto the empty string 
   
 # Funtion
-  def makepancake(a,b):
+  def makepancake(*args):
     #code block
+  
+  *args takes all given 
   
   return #sends output
   continue #does the next iteration
