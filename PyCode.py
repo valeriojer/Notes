@@ -68,4 +68,17 @@
  33 
  34 if __name__ == '__main__':
  35     pass
-~                                 
+~    
+
+
+Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a word, then add the word to a list called p_words.
+
+   with open('school_prompt.txt', 'r') as fp:
+       words = fp.read().split()
+       p_words = []
+       for word in words:
+           check = list(word)
+           for letter in check:
+               if 'p' in word:
+                   p_words.append(word)
+                   break
