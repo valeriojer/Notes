@@ -16,9 +16,15 @@
 # list
   just like arrays they use [] and can be change once set and be added onto
   
-  listslicing
+  # listslicing
   mylist[0:10] #provid it with nothing and itll go to the end
     [start,stop,step]     inversing [::-1]
+  
+  # listcomprephtion
+    fails = [i for i in grades if i < 70]
+                 
+    fails = [item for item in list conditional]
+                                      
   
 # tuple
   tuple use () instead and cannot be changed once set 
@@ -129,4 +135,18 @@
         myDict[i] += 1
     else:
         myDict[i] = 1
+# lambda
+  y = lambda x: x + 100
+  print(y(50))
+    150
   
+  
+  
+  
+  
+  
+  
+  
+  
+## Notes
+  .isnumeric() gives back a bool if its a number
