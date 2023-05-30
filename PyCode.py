@@ -31,7 +31,12 @@
  31 if __name__ == '__main__':
  32     pass
 
-
+ #Email split
+ Email = 'Jeremy.a.valerio@usmc.mill'
+ parts = Email.split('@')
+ parts = '.'.join(parts)
+ parts = parts.split('.')
+ return parts[-1]
 
  #!/usr/bin/env python3
   2 
