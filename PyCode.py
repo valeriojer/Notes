@@ -351,13 +351,80 @@ PRACT 2
                 with open(f1) as fp1:
                     line0 = fp0.readlines()
                     line1 = fp1.readlines()
-              
                     for counter,item in enumerate(line0):
                         if item != line1[counter]:
                             diffs.append(counter)
+         return diffs          
+                   
+          diffs = []
+          with open(f0) as fp0:
+              with open(f1) as fp1:
+                   line0 = fp0.readlines()
+                   line1 = fp1.readlines()
+          counter = 0
+          for l0,l1 in zip(line0,line1)
+              if l0 != l1:
+                  diffs.append(counter)
+              counter += 1
+                   
+         
+
+    def q7(lst):
+ 94     '''
+ 95     Return the first duplicate value in the given list.
+ 96     For example, if given [5,7,9,1,3,7,9,5], the returned value should
+ 97     be 7.
+ 98     '''
+        seen = []
+        for i in lst:
+            if i in seen:
+                return i
+            else:
+                seen.append(i)
+   
+    def q8(strng):
+102     '''
+103     Given a sentence as a string with words being separated by a single space,
+104     return the length of the shortest word.
+105     '''
+        splitted = strng.split()
+        millen = len(splitted[0])
+        for i in splitted:
+            if len(i) < minlen:
+                minlen = len(i)
+        return minlen
+       
+        smallest = len(min(strng.split(),key = len))
+        return smallest
+       
+       
+   def q9(strng):
+109     '''
+110     Given an alphanumeric string, return the character whose ascii value
+111     is that of the integer represenation of all of the digits in the string
+112     concatenated in the order in which they appear. For example, given
+113     'hell9oworld7', the returned character should be 'a' which has
+114     the ascii value of 97.
+115     '''
+        nums = []
+        for i in strng:
+            if i.isnumeric():
+                nums.append(i)
+        return chr(int(''.join(nums)))
 
 
 
+def q10(arr):
+119     '''
+120     Given a list of positive integers sorted in ascending order, return
+121     the first non-consecutive value. If all values are consecutive, return
+122     None. For example, given [1,2,3,4,6,7], the returned value should be 6. 
+123     '''
+        for c,i in enumerate(arr);
+            if arr[c+1] != i+1:
+                return arr[c+1]
+        return None
+   
 
 
                               
