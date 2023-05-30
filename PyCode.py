@@ -38,6 +38,16 @@
  parts = parts.split('.')
  return parts[-1]
 
+ #letter count with Dict
+ Dict = {}
+ for i in str:
+     if i in Dict:
+         Dict[i] += 1
+     else:
+         Dict[i] = 1
+ return Dict
+
+
  #!/usr/bin/env python3
   2 
   3 def steg_encode_char(char, cover):
