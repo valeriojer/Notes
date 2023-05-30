@@ -260,6 +260,106 @@ Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a wo
 178     pass
 179 
 
+
+
+PRACT 2
+#!/usr/bin/env python3
+  2 
+  3 def q1(sentence):
+  4     '''
+  5     Given a string of multiple words separated by single spaces,
+  6     return a new string with the sentence reversed. The words
+  7     themselves should remain as they are. For example, given
+  8     'it is accepted as a masterpiece on strategy', the returned
+  9     string should be 'strategy on masterpiece a as accepted is it'.
+ 10     '''
+ 11     words = sentence.split()
+ 12     words_revsersed = reversed(words)
+ 13     return ' '.join(words_revsered)
+ 18     pass
+ 19       
+ 20 def q2(n):
+ 21     '''
+ 22     Given a positive integer, return its string representation with
+ 23     commas seperating groups of 3 digits. For example, given 65535
+ 24     the returned string should be '65,535'.
+ 25     '''
+ 26     return '{:,}'.format(n)
+ 27
+ ...
+ 36 def q3(lst0, lst1):
+ 37     '''
+ 38     Given two lists of integers, return a sorted list that contains
+ 39     all integers from both lists in descending order. For example,
+ 40     given [3,4,9] and [8,1,5] the returned list should be [9,8,5,4,3,1].
+ 41     The returned list may contain duplicates.
+ 42     '''
+ 43     combined = lst0 + lst1
+ 44     new_list = sorted(combined)
+ 45     new_list = reversed(new_list)
+ 46     return list(new_list)
+ ...
+ 53 def q4(s1,s2,s3):
+ 54     '''
+ 55     Given 3 scores in the range [0-100] inclusive, return 'GO' if
+ 56     the average score is greater than 50. Otherwise return 'NOGO'.
+ 57     '''
+ 58     s0 = s1 + s2 + s3
+ 59     avg = s0 / 3
+ 60     if avg > 50:
+ 61         return 'GO'
+ 62     else:
+ 63         return 'NOGO'
+ 64     pass
+ ...
+ 77 def q5(integer, limit):
+ 67     '''
+ 68     Given an integer and limit, return a list of even multiples of the
+ 69     integer up to and including the limit. For example, if integer==3 and
+ 70     limit==30, the returned list should be [0,6,12,18,24,30]. Note, 0 is
+ 71     a multiple of any integer except 0 itself.
+ 72     '''
+
+ 82     multiples = []
+ 83     for i in range(0, limit + 1):
+ 84         if (i%integer == 0) and (i%2 == 0):
+ 85              multiples.append(i)
+ 86     return multiples
+
+
+ 74     return [i for i in range(0,limit+1, integer) if i % 2 == 0 ]
+ 73
+ 78 def q6(f0, f1):
+ 78     '''
+ 79     Given two filenames, return a list whose elements consist of line numbers
+ 80     for which the two files differ. The first line is considered line 0.
+ 81     '''
+        diffs = []
+        with open(f0) as fp0:
+            with open(f1) as fp1:
+                line0 = fp0.readlines()
+                line1 = fp1.readlines()
+                counter = 0
+                for i in line0:
+                    if i != line1[counter]:
+                        diffs.append(counter)
+                    counter += 1
+         return diffs
+       
+         diffs = []
+            with open(f0) as fp0:
+                with open(f1) as fp1:
+                    line0 = fp0.readlines()
+                    line1 = fp1.readlines()
+              
+                    for counter,item in enumerate(line0):
+                        if item != line1[counter]:
+                            diffs.append(counter)
+
+
+
+
+
                               
  
 
