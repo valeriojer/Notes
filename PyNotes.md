@@ -150,3 +150,6 @@
   
 ## Notes
   .isnumeric() gives back a bool if its a number
+  .isalpha() gives back a bool if its a letter
+  .isalnum() gives back a bool if its a letter and number
+  
