@@ -26,6 +26,13 @@ mtime = modified time  in day
 cmin = changed within the mins 
 mindepth 3 = go down 3 dirs
 maxdepth 2 = goes up
+sort
+cut
+  -d delimiter
+  -f fields
+  -c characters
+  -s only delimiter
+  --output-delimiter
 
 
 history = shows hidtory with numbers
