@@ -49,7 +49,9 @@ find / -inum 4026532575 -printf "%f\n"
 Activity: Using only the ls -l and cut Commands, write a BASH script that shows all filenames with extensions ie: 1.txt, etc., but no directories, in $HOME/CUT.
 Write those to a text file called names in $HOME/CUT directory. Omit the names filename from your output.
 
-ls -l ~/CUT | cut -d. -s -f1,2 | cut -d' ' -f9 > ~/CUT/names
+ls -l ~/CUT | cut -d. -s -f1,2 | cut -d':' -f2| cut -d'' -f2 > ~/CUT/names
+ls -l /*.* | cut -d'/' -f3
+ls -l ~/CUT | cut -d. -s -f1,2 | rev | cut -d" " -f1 | rev 
 -------------------------------------------------------------------------------
 
 
