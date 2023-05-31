@@ -18,8 +18,15 @@ killall = killall firefox
 cat = reads entire txt to screen
 more =
 less = line by line reading
-locate
-find
+locate = were something is instaileds
+whereis = look for file based off names
+find = search | find -iname bash.txt
+exec = do something when found
+mtime = modified time  in day
+cmin = changed within the mins 
+mindepth 3 = go down 3 dirs
+maxdepth 2 = goes up
+
 
 history = shows hidtory with numbers
   ! = run line number
