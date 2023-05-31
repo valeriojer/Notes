@@ -15,9 +15,11 @@ alt + f or b = forward or back
 ps -- forest
 kill = kill -9 234
 killall = killall firefox
-cat = reads entire txt
+cat = reads entire txt to screen
 more =
 less = line by line reading
+locate
+find
 
 history = shows hidtory with numbers
   ! = run line number
