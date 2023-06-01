@@ -26,13 +26,36 @@ mtime = modified time  in day
 cmin = changed within the mins 
 mindepth 3 = go down 3 dirs
 maxdepth 2 = goes up
-sort
-cut
+## sort
+  sort                sorts content according to position on the ASCII table
+  sort -o             output to a differnet file
+  sort -n             sorts content numerically
+  sort -u             sorts content uniqely
+  sort -nr            sorts content numerically reversed
+  sort -t +
+  sort -k 2,4         sorts 1st by content in the 2nd column, then by content in the 4th column
+## cut
   -d delimiter
   -f fields
   -c characters
   -s only delimiter
   --output-delimiter
+  cut -d: -f1         displays only portion of line before 1st instance of delimiter ``:''
+  cut -d: -f1-        " and any following strings up to the very next instance ``:''
+  cut -d: -f1- -s     " " but don’t print any lines not containing delimiter ``:''
+  cut -f3             displays only the 3rd field delimited by space
+  cut -f2-4           displays only fields 2 through 4 delimited by space
+  cut -c3-10          displays only the 3rd through 10th characters of each line
+## awk
+  awk -F: '{print $1}'         displays 1st field delimited by a ":"
+  awk '{print $2}'             displays 2nd field, delimited automatically by whitespace
+  awk '{print $0}'             displays all string data that matches
+
+  awk -F: '($3 == 0) {print $1}' /etc/passwd
+                              displays 1st field (username) IF the 3rd field (UID) is equal to "0"
+  awk '{print $NF}'           displays only the last field of every line
+    $0 prints entire line
+    NR shows line number
 
 
 history = shows hidtory with numbers
@@ -52,6 +75,7 @@ man = manull
 explainshell.com
 curl cht.sh
 manpages.org
+https://www.geeksforgeeks.org/awk-command-unixlinux-examples/#
 
 ## Order of Evalutions
 1. Redirection 
