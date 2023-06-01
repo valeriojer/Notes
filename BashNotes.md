@@ -76,8 +76,18 @@ maxdepth 2 = goes up
   uniq -c             sorts content uniqely with a count reading
   uniq -i             case insenitive
   uniq -d,-D          shows dupes and shows all dupes
-  
-  
+## Allias 
+  alias rm='rm -i'                    creates alias to confirm removal
+  alias vim='nano'                    creates an alias for `nano'
+  alias gedit='nano'                  "
+  alias vi='nano'                     "
+  alias x='cat etc/passwd'            creates an alias for Command: cat/etc/passwd
+  alias y=$(cat /etc/shadow)          " cat /etc/shadow
+  alias ls='ls -al'                   creates an alias causing 'ls -al' to be run when 'ls' is used
+  \ls                                 negates the alias function, so we can run 'ls' without '-al'
+  alias -p                            view all aliases set (local and global)
+  unalias ls                          unaliases ls so it no longer resolves to 'ls -al'
+
 
 history = shows hidtory with numbers
   ! = run line number
@@ -90,6 +100,7 @@ man = manull
   egrep = looks for pathern
   G = moves to the end
   g = moves to the start
+  
 ## Conditionals
   -e          file exists ?
   -f          file exists, and is regular file ?
@@ -103,6 +114,10 @@ man = manull
   -le         is less than or equal to
   -eq ==      is equal to
   -ne !=      is NOT equal to
+## Command Substitution
+  A=$(Command)            A=$(cat /etc/passwd)  
+  `Command`               `cat /etc/passwd`
+
   
 ## resoruces
 explainshell.com
