@@ -56,6 +56,21 @@ maxdepth 2 = goes up
   awk '{print $NF}'           displays only the last field of every line
     $0 prints entire line
     NR shows line number
+## sed
+  sed '/.dll/{x;p;p;p;x}' -i document.txt
+     directly alters document.txt by adding 3 empty lines before the designated regex (.dll)
+
+ . sed '/stuff/G;/stuff/G' -i document.txt
+      directly alters document.txt by adding 2 empty lines after the designated regex (stuff)
+
+  sed -i -e 's/ANCHOVIES/SAUSAGE/g' pizaster.htm
+              replaces every instance of "ANCHOVIES" with "SAUSAGE" on pizaster.htm
+
+  sed -i -e 's/ANCHOVIES//g' pizaster.htm
+              removes every instance of "ANCHOVIES" on pizaster.htm
+
+  sed -i '/^#/d' /etc/hosts.allow
+              removes all lines starting with "#" from file /etc/hosts.allow
 
 
 history = shows hidtory with numbers
