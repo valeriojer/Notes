@@ -71,7 +71,13 @@ maxdepth 2 = goes up
 
   sed -i '/^#/d' /etc/hosts.allow
               removes all lines starting with "#" from file /etc/hosts.allow
-
+## uniq (sort first)
+  uniq                sorts content uniqely
+  uniq -c             sorts content uniqely with a count reading
+  uniq -i             case insenitive
+  uniq -d,-D          shows dupes and shows all dupes
+  
+  
 
 history = shows hidtory with numbers
   ! = run line number
@@ -84,7 +90,19 @@ man = manull
   egrep = looks for pathern
   G = moves to the end
   g = moves to the start
-  
+## Conditionals
+  -e          file exists ?
+  -f          file exists, and is regular file ?
+  -d          file exists, and is a directory ?
+  -s          file exists, and is NOT empty ?
+  -x          file exists, and IS executable ?
+  -w          file exists, and is writable by me ?
+  -gt >       is greater than
+  -lt <       is less than
+  -ge         is greater than or equal to
+  -le         is less than or equal to
+  -eq ==      is equal to
+  -ne !=      is NOT equal to
   
 ## resoruces
 explainshell.com
