@@ -117,13 +117,80 @@ man = manull
 ## Command Substitution
   A=$(Command)            A=$(cat /etc/passwd)  
   `Command`               `cat /etc/passwd`
-
+ 
+## Functions
+  func() {
+    echo hello I am a Function
+    #tis is a comment
+  }
+  func #to call it 
   
+  function getuser()
+  {
+    echo "make choice[1,2,3]:"
+    read userchoice
+    case $userchoice in
+      (1) echo one ;;
+      (2) echo two ;;
+      (3) echo three ;;
+      (*) echo other ;;
+    esac
+  }
+  getuser
+  
+## Variable Substitution
+  A=value                 A=120
+  B=value                 B=20
+  expr $A - $B            =100
+  C=$(expr $A - $B)
+  echo $C                 =100
+  D=.mp3                  for x in $(cat songs); do sed -i "s/$/$D/"; done
+                          =appends .mp3 to the end of every song in file: songs
+
+## Special Variables
+  $*  The positional parameters, starting from one.
+  $@  The positional parameters, starting from one.
+  $#  The number of positional parameters.
+  $?  The exit status of the previous command.
+  $-  The current option flags of the shell.
+  $$  The process ID of the shell.
+  $!  The process ID of the most recent background job.
+  $0  is set to the name of the script.
+  $_  First command in a script, is the path/name of the script as invoked.
+      Otherwise, it is the last parameter passed to the most recent command.
+
+  H - hiestexpand
+  n - monitor
+  h - hashall
+  b - braceexpand
+  i - interactive
+
+
 ## resoruces
-explainshell.com
-curl cht.sh
-manpages.org
-https://www.geeksforgeeks.org/awk-command-unixlinux-examples/#
+  explainshell.com
+  curl cht.sh
+  manpages.org
+  https://www.geeksforgeeks.org/awk-command-unixlinux-examples/#
+
+## Wildcards
+ 	? 		matches 0 or more occurances (may or may not occur) +
+	. 		any single character
+	*		any chars
+	^		represents start of string
+	$		represents end of string
+	[a-zA-Z0-9]	can contain any within range [..]
+	[1..99] 	denotes range from 1 to 99
+	{1,3} 		can contain as few or as many of {..,..}
+	[1-3]*		denotes one or more matches to [1-3]
+	.*		used to match any single character one or more times
+	\. 		matches the actual dot "."
+	\?		matches the actual question mark "?"
+	+		matches 1 or more occurances
+	(….)		denote sub-expressions
+	"cat|dog[fish]" can match either cat fish OR dog fish
+	$touch \{cat,dog,flying,running}fish
+	$ls -1 | grep "cat|dog[fish]"
+	| 		matches either (….) | (….) essentially an "OR"
 
 ## Order of Evalutions
 1. Redirection 
