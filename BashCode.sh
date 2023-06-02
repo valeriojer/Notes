@@ -53,5 +53,30 @@ ls -l ~/CUT | cut -d. -s -f1,2 | cut -d':' -f2| cut -d'' -f2 > ~/CUT/names
 ls -l /*.* | cut -d'/' -f3
 ls -l ~/CUT | cut -d. -s -f1,2 | rev | cut -d" " -f1 | rev 
 -------------------------------------------------------------------------------
+Activity: Write a basic bash script that greps ONLY the IP addresses in the text file provided (named StoryHiddenIPs in the current directory);
+sort them uniquely by number of times they appear.
 
+egrep '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' -o StoryHiddenIPs | sort | uniq -c | sort -r | awk {print}
+-------------------------------------------------------------------------------
+Activity: Using ONLY the awk command, write a BASH one-liner script that extracts ONLY the names of all the system and user accounts that are not UIDs 0-3.
+Only display those that use /bin/bash as their default shell. the input file is named $HOME/passwd and is located in the current directory.
+Output the results to a file called $HOME/SED/names.txt
 
+awk -F: '($3 > 3 && $NF == "/bin/bash") {print $1}' ~/passwd > ~/SED/names.txt
+-------------------------------------------------------------------------------
+Activity: Find all dmesg kernel messages that contain CPU or BIOS (uppercase) in the string, but not usable or reserved (case-insensitive)  
+Print only the msg itself, omitting the bracketed numerical expressions ie: [1.132775]
+
+dmesg | egrep "(CPU)|(BIOS)" | egrep -v "(usable)|(reserved)" | cut -d] -f2-
+--------------------------------------------------------------------------------
+Activity: Write a Bash script using "Command Substitution" to replace all passwords, using openssl, from the file $HOME/PASS/shadow.txt with the MD5 encrypted password: Password1234, with salt: bad4u
+Output of this command should go to the screen/standard output. You are not limited to a particular command, however you must use openssl. 
+Type man openssl passwd for more information.
+
+A=$(openssl passwd -1 -salt bad4u Password1234)
+awk -F: -v "awk_var=$A" 'BEGIN {OFS=":"} {$2=awk_var} {print $0}' ~/PASS/shadow.txt
+----------------------------------------------------------------------------------
+Activity: Using ONLY sed, write all lines from $HOME/passwd into $HOME/PASS/passwd.txt that do not end with either /bin/sh or /bin/false.
+
+sed '/\/bin\/sh/d' ~/passwd | sed '/false/d' > ~/PASS/passwd.txt
+------------------------------------------------------------------------------------------------
