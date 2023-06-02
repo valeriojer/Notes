@@ -79,4 +79,56 @@ awk -F: -v "awk_var=$A" 'BEGIN {OFS=":"} {$2=awk_var} {print $0}' ~/PASS/shadow.
 Activity: Using ONLY sed, write all lines from $HOME/passwd into $HOME/PASS/passwd.txt that do not end with either /bin/sh or /bin/false.
 
 sed '/\/bin\/sh/d' ~/passwd | sed '/false/d' > ~/PASS/passwd.txt
-------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Activity: Using find, find all files under the $HOME directory with a .bin extension ONLY.
+Once the file(s) and their path(s) have been found, remove the file name from the absolute path output.
+Ensure there is no trailing / at the end of the directory path when outputting to standard output. You may need to sort the output depending on the command(s) you use.
+
+find ~/ -name "*.bin" | rev | cut -d/ -f2- | rev | sort | uniq
+-----------------------------------------------------------------------------------
+Activity: Write a script which will copy the last entry/line in the passwd-like file specified by the $1 positional parameter
+Modify the copied line to change: User name to the value specified by $2 positional parameter
+Used id and group id to the value specified by $3 positional parameter Home directory to a directory matching the user name specified by $2 positional parameter under the /home directory
+The default shell to 'bin/bash' Append the modified line to the end of the file
+
+path=$1
+uname=$2
+uid=$3
+gid=$3
+newhome="/home/$uname"
+defaulr="/bin/bash"
+
+lastline=$(tail -n 1 "$path")
+
+modline=$(echo "$lastline" | awk -F ':' -v var="$uname" -v fid=$uid -v sid=$gid -v home=$newhome -v she=$defaulr 'BEGIN{OFS=FS}{$1=var; $3=fid; $4=sid; $6=home; $7=she; print}')
+
+echo "$modline" >> "$path"
+-------------------------------------------------------------------------------------
+Activity: Find all executable files under the following four directories:
+        /bin
+        /sbin
+        /usr/bin
+        /usr/sbin
+Sort the filenames with absolute path, and get the md5sum of the 10th file from the top of the list.
+
+a=$(find /bin /sbin /usr/bin /usr/sbin -type f -executable | sort | head | tail -1) 
+md5sum $a | awk -F' ' '{print $1}'
+--------------------------------------------------------------------------------------
+Activity: sing any BASH command complete the following: ort the /etc/passwd file numerically by the GID field.
+For the 10th entry in the sorted passwd file, get an md5 hash of that entry’s home directory. utput ONLY the MD5 hash of the directorys name to standard output.
+
+awk -F: '{print $4,$6}' /etc/passwd | sort -n | head | tail -1 | awk -F " " '{print $2}'| md5sum | awk -F " " '{print $1}' 
+--------------------------------------------------------------------------------------
+Activity:
+
+    Write a script which will find and hash the contents 3 levels deep from each of these directories: /bin /etc /var
+    Your script 
+    
+a=$(find /bin /etc /var -maxdepth 3) 
+md5sum $a 2>err.txt 1>out.txt
+b=$(cat err.txt| grep -v denied | wc -l)
+c=$(cat out.txt | wc -l)
+
+echo Successfully Hashed Files: $c
+echo Unsuccessfully Hashed Directories: $b    
+--------------------------------------------------------------------------------------
