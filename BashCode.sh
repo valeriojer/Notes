@@ -85,6 +85,7 @@ Once the file(s) and their path(s) have been found, remove the file name from th
 Ensure there is no trailing / at the end of the directory path when outputting to standard output. You may need to sort the output depending on the command(s) you use.
 
 find ~/ -name "*.bin" | rev | cut -d/ -f2- | rev | sort | uniq
+find ~/ -name "*.bin" | awk 'BEGIN{FS="/";OFS="/"}{NF=NF-1}{print $0}' | sort -u
 -----------------------------------------------------------------------------------
 Activity: Write a script which will copy the last entry/line in the passwd-like file specified by the $1 positional parameter
 Modify the copied line to change: User name to the value specified by $2 positional parameter
@@ -119,10 +120,8 @@ For the 10th entry in the sorted passwd file, get an md5 hash of that entry’s 
 
 awk -F: '{print $4,$6}' /etc/passwd | sort -n | head | tail -1 | awk -F " " '{print $2}'| md5sum | awk -F " " '{print $1}' 
 --------------------------------------------------------------------------------------
-Activity:
-
-    Write a script which will find and hash the contents 3 levels deep from each of these directories: /bin /etc /var
-    Your script 
+Activity: Write a script which will find and hash the contents 3 levels deep from each of these directories: /bin /etc /var
+Your script 
     
 a=$(find /bin /etc /var -maxdepth 3) 
 md5sum $a 2>err.txt 1>out.txt
