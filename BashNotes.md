@@ -207,4 +207,42 @@ ls {BASH,SSH,ZIP}
 no spaces allowed
 touch multiple files{1..10}.log
 
-  
+# For loops
+ for x in {a, b, c, d}
+ do
+   	echo $x
+ done
+
+ for x in $(cat /etc/passwd | awk -F: '{print $1}')
+ 	do echo $x is a user on the system
+ done
+
+# While loops
+ while [bool]
+ do
+ 	#Block code
+ done
+ 
+ counter=1
+ while[$counter -le 10]
+ do
+ 	echo $counter
+	((counter++))
+ done
+ echo All Done
+ 
+ # Until loop
+ a=0
+ untill [ $a -gt 10 ]
+ 	do
+	echo $a
+	a= `expr $a + 1`
+	done
+# If statment
+if [ $a == 5 ]
+then
+	break
+	continue
+fi
+echo "Iteration no $a"
+
