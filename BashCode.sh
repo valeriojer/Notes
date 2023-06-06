@@ -1,4 +1,4 @@
-Activity: Using Brace-Expansion, create the following directories within the $HOME directory:
+1 Activity: Using Brace-Expansion, create the following directories within the $HOME directory:
 
     1123
     1134
@@ -7,7 +7,7 @@ Activity: Using Brace-Expansion, create the following directories within the $HO
     
 mkdir {1123,1134,1145,1156}
 ----------------------------------------------------------------------
-Activity: Use Brace-Expansion to create the following files within the $HOME/1123 directory. You may need to create the $HOME/1123 directory.
+1.2 Activity: Use Brace-Expansion to create the following files within the $HOME/1123 directory. You may need to create the $HOME/1123 directory.
 Make the following files, but utilze Brace Expansion to make all nine files with one touch command.
 Files to create:
 
@@ -23,15 +23,15 @@ Files to create:
     
 touch 1123/{1..5}.txt |touch 1123/{6..9}~.txt
 ----------------------------------------------------------------------
-Activity: Using the find command, list all files in $HOME/1123 that end in .txt.
+1.3a Activity: Using the find command, list all files in $HOME/1123 that end in .txt.
 
 find -name \*.txt
 -----------------------------------------------------------------------
-Activity: List all files in $HOME/1123 that end in .txt. Omit the files containing a tilde (~) character.
+1.3b Activity: List all files in $HOME/1123 that end in .txt. Omit the files containing a tilde (~) character.
 
 find ~/1123 -name *.txt ! -name *~*
 ------------------------------------------------------------------------
-Activity: Copy all files in the $HOME/1123 directory, that end in ".txt", and omit files containing a tilde "~" character, to directory $HOME/CUT.
+2 Activity: Copy all files in the $HOME/1123 directory, that end in ".txt", and omit files containing a tilde "~" character, to directory $HOME/CUT.
 Use only the find and cp commands. You will need to utilize the -exec option on find to accomplish this activity.
 
 find ~/1123 -name *.txt ! -name *~* -exec cp {} ~/CUT \;
