@@ -352,9 +352,20 @@ function q1()
 {
   #Valid Variables are:
   fname=$1
+  Aoo=$(wc -m $fname | cut -d" " -f1)
   #Your code here
-  grep -v $3 $1 > $2
-}
+  if [[ $Aoo == 1 ]]; then
+    echo single digit
+  
+  elif [[ $Aoo == 2 ]]; then
+    echo double digit
+  
+  elif [[ $Aoo == 3 ]]; then
+    echo triple digit
+  else
+    echo Error
+fi      
+ }
 -----------------------------------------------------------------------------------------------
 8 Copy all lines from the file specified by src variable to the file specified by dst variable which DO NOT contain the text specified by match variable.
 
@@ -365,6 +376,7 @@ function q1()
   dst=$2
   match=$3
   #Your code here
+  grep -v $3 $1 > $2
 }
 -----------------------------------------------------------------------------------------------
 9 Terminate the process that has the randomly assigned name specified by procname variable. procname does not contain path information.
