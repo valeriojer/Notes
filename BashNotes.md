@@ -50,6 +50,7 @@ maxdepth 2 = goes up
   awk -F: '{print $1}'         displays 1st field delimited by a ":"
   awk '{print $2}'             displays 2nd field, delimited automatically by whitespace
   awk '{print $0}'             displays all string data that matches
+  awk '/loss/{print $3}'       search for loss and return the 3rd field on the line
 
   awk -F: '($3 == 0) {print $1}' /etc/passwd
                               displays 1st field (username) IF the 3rd field (UID) is equal to "0"
