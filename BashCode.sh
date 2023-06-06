@@ -209,7 +209,13 @@ do
     echo "$entry" >> "$passwd_file"
     fi
 done
-----------------------------------------------------------------------------------------------
+
+rootline=$( head -1 $HOME/passwd)
+for x in {LARRY ,CURLY ,MOE} ; do
+    myuid=$(cat $HOME/$x.txt)
+    mkdir $HOME/$x
+    echo $rootline | awk -F: -v un=$x -v ui=$myuid 'BEGIN{OFS=":"}{$1=un;$3=$4=$ui;$6="$HOME/"un}{print $0}' >> $HOME/passwd
+---------------------------------------------------------------------------------------------
 20 Activity: Write a bash script that will find all the files in the /etc directory, and obtains the octal permission of those files. 
 The stat command will be useful for this task. Depending how you go about your script, you may find writing to the local directory useful.
 What you must seperate out from the initial results are the octal permissions of 0-640 and those equal to and greater than 642, ie 0-640 goes to low.txt,
