@@ -353,6 +353,7 @@ function q1()
   #Valid Variables are:
   fname=$1
   #Your code here
+  grep -V $3 $1 > $2
 }
 -----------------------------------------------------------------------------------------------
 8 Copy all lines from the file specified by src variable to the file specified by dst variable which DO NOT contain the text specified by match variable.
