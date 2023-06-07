@@ -17,3 +17,14 @@ remove-item alias:edit
 (get-process).processname
 (get-process notepad).kill()
 get-process | get-member
+
+Get-Service | Format-Table Name, Status, starttype
+
+write-host
+write-output  #will be able to pike 
+
+get-variable  $a = 10   $b,$c,$d = 12,24,12 
+Get-variable home 
+test-path variable:a
+remove-variable:b
+del variable:c
