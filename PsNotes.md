@@ -28,3 +28,18 @@ Get-variable home
 test-path variable:a
 remove-variable:b
 del variable:c
+
+(ps).gettype()
+$proc = ps
+$proc[-1]
+$proc -is [array]
+$proc.count
+$proc.length
+
+$array = 1..4
+$array[0] -is [int] 
+
+$array = "he", 5, (date)
+($array[-1]).gettype()
+
+$array2=@()-max
