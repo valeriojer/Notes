@@ -82,3 +82,16 @@ $myhost | Add-Member NoteProperty -Name Version -value (Get-WmiObject -Class Win
 $myhost | Add-Member NoteProperty -Name Manufacturer -va (Get-WmiObject -Class Win32_bios).manufacturer
 $myhost | Add-Member NoteProperty -Name Disks -va (Get-WmiObject -Class Win32_logicalDisk).path
 $myhost
+_______________________________________________________________________________________________________
+#####Practical Exercise: Arrays & Hash Tables
+$employee1 = @{First='Mary'
+                Last='Hopper'
+                Id='001'
+                Job='Software Developer'
+                }
+$employee2 = @{First='John'
+                Last='Williams'
+                Id='002'
+                Job='Web Developer'
+                }
+$employee1.Add('Username',"$First[0]$Last$id")
