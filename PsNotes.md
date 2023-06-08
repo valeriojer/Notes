@@ -106,4 +106,39 @@ Start-Service -Name WebClient
 "a" -eq "a","b"   F
 "a","b" -ep "b"   "b"
 
--like   -contains   -
+-like   -contains   
+
+$x = 11
+if($x -gt 10){
+  "$x is larger than 10"
+  write-host "$x is larger" -foregroundcolor red
+}
+else{
+  write-host "ex1"
+}
+
+$fruit = "b"
+switch($fruit){
+  a{"apple"}
+  b{"banana"}
+  c{"cranberry"}
+}
+
+$num = 0
+do{
+  $num
+  $num++
+}while($num -lt 3)
+  
+do{
+  $num
+  $num++
+}until($num -gt 3)
+
+for($i = 0; $i -le 255; $i++){
+  write-host 192.168.0.$i
+}
+
+$hash = @{}
+
+
