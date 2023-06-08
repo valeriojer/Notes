@@ -72,3 +72,22 @@ get-childitem *.dll | where-object {$_.length -gt 100}
 ps | where {$_.Name -like "*powershell*"} | ft name, Description
 ps | where {$_.Name -eq "idle"} | ft name, Descripton
 gci | Measure-Object Length
+
+'WORLD' > text.txt 
+$before = gci
+'4' > text.txt
+$after = gci
+Compare-Object $before $after -Property length, name
+
+$myTruck = new-object object
+Add-member -membertype noteproperty -name color -value Black -inputobject $mytruck
+add-member -me NoteProperty -in $mytruck -na make -va Ford
+$mytruck | Add-Member NoteProperty -Name Model -Value F150
+Add-Member -me ScriptMethod -in $myTruck -name drive -va {"ROAD TRIPPPP"}
+
+$Sold = [PSCustomObject]@{
+"Firstname" = "Joe"
+"LastName" = "Snuffy"
+"MOS" = "1721"
+"Rank" = "Lcpl"
+}
