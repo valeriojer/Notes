@@ -58,3 +58,17 @@ foreach ($line in $a){
     wirte-output $line
   }
 }
+
+$myblock = {get-service | ft name, status}
+& $myblock
+
+$a = 1
+$c = {1+1}
+$a += &$c
+
+get-childitem | sort  -property lenght -descending
+Get-Service | Where-Object {$_.status -eq 'running'}
+get-childitem *.dll | where-object {$_.length -gt 100}
+ps | where {$_.Name -like "*powershell*"} | ft name, Description
+ps | where {$_.Name -eq "idle"} | ft name, Descripton
+gci | Measure-Object Length
