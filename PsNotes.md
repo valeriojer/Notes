@@ -93,3 +93,17 @@ $Sold = [PSCustomObject]@{
 }
 
 Get-PSDrive
+New-PSDrive -Name HKU -PSProvider Registry -Root HKEY_USERS
+cd HKU:
+New-PSDrive -Name z -PSProvider FileSystem -Root \\live.sysinternals.com\tools
+Start-Service -Name WebClient
+
+2 -eq 2           T
+2 -eq 3           F
+1,2,3 -eq 2       2
+"abc" -eq "abc"   T
+"a" -eq "a"       T
+"a" -eq "a","b"   F
+"a","b" -ep "b"   "b"
+
+-like   -contains   -
