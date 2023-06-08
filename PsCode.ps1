@@ -70,3 +70,15 @@ $randArray=(Get-Random -Minimum -10 -Maximum 0)..(get-random -Minimum 1 -Maximum
 $revranarray = $randArray
 [array]::Reverse($revranarray)
 _______________________________________________________________________________________________________
+#####Practical Exercise: Custom Object
+    #Create a custom object that contains information about the host system using the following:
+    #Win32_ComputerSystem    Win32_BIOS  Win32_OperatingSystem   Win32_LogicalDisk
+    #Use the cmdlet Get-WmiObject to obtain the needed information
+
+$myhost= New-Object object
+$myhost | Add-Member NoteProperty -name ComputerName -Value (Get-WmiObject -Class Win32_ComputerSystem).name
+$myhost | Add-Member NoteProperty -Name OperatingSystem -value (Get-WmiObject -Class Win32_operatingsystem).Caption 
+$myhost | Add-Member NoteProperty -Name Version -value (Get-WmiObject -Class Win32_operatingsystem).version
+$myhost | Add-Member NoteProperty -Name Manufacturer -va (Get-WmiObject -Class Win32_bios).manufacturer
+$myhost | Add-Member NoteProperty -Name Disks -va (Get-WmiObject -Class Win32_logicalDisk).path
+$myhost
