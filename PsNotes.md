@@ -91,3 +91,5 @@ $Sold = [PSCustomObject]@{
 "MOS" = "1721"
 "Rank" = "Lcpl"
 }
+
+Get-PSDrive
