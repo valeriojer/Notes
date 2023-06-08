@@ -65,4 +65,4 @@ Get-HotFix | Sort-Object -Property Description | ft Description, installedon,hot
 _______________________________________________________________________________________________________
 #####Practical Exercise: Reverse Arrays
     #Create an array containing a range with a random starting and stopping point. The starting point will be a random number from -10 through 0. The ending point will be a random number from 1 through 20.
-   
+$randArray=(Get-Random -Minimum -10 -Maximum 0)..(get-random -Minimum 1 -Maximum 20)   
