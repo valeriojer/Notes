@@ -43,3 +43,11 @@ $array = "he", 5, (date)
 ($array[-1]).gettype()
 
 $array2=@()-max
+
+$jagarray = "jim", "joe", "jon", (1,('apple' , 'people'),4), "jan"
+$jagarry[3][1][1]
+
+$a = 1,2,3
+$a += @(4,5,6)
+$a += , @(7,8,9)
+$a[-1] 
