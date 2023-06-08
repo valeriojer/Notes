@@ -84,6 +84,7 @@ $myhost | Add-Member NoteProperty -Name Disks -va (Get-WmiObject -Class Win32_lo
 $myhost
 _______________________________________________________________________________________________________
 #####Practical Exercise: Arrays & Hash Tables
+    #sing the following table of key-value pairs, apply each key-value to the empty hash tables.
 $employee1 = @{First='Mary'
                 Last='Hopper'
                 Id='001'
@@ -94,4 +95,15 @@ $employee2 = @{First='John'
                 Id='002'
                 Job='Web Developer'
                 }
-$employee1.Add('Username',"$First[0]$Last$id")
+$employee1.Add('Username','mhopper001')
+$employee2.Add('Username','jwilliams002')
+$employee1.Job = 'Software Lead'
+$employee3 =  @{First='Alex'
+                Last='Moran'
+                Id='003'
+                Job='Software Developer'
+                }
+$employee1.Add('Status','Management')
+$employee2.Add('Status','Interediate')
+$employee3.Add('Status','Entry Level')
+_______________________________________________________________________________________________________
