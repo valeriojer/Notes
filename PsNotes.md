@@ -51,3 +51,10 @@ $a = 1,2,3
 $a += @(4,5,6)
 $a += , @(7,8,9)
 $a[-1] 
+
+// loop through checking the last index of arrays
+foreach ($line in $a){
+  if ($line[-1] -eq 'apple'){
+    wirte-output $line
+  }
+}
