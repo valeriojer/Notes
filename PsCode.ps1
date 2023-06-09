@@ -144,3 +144,20 @@ foreach ($app in "notepad", "msedge", "mspaint")
     Stop-Process -Id (Get-Content procs.txt) -Force
 }
 _____________________________________________________________________________________________________
+#####Practical Exercise: Create Functions   
+    #
+function Get-OrdinalDate(){
+    if((date).month -eq 6){$ordMonth=151}
+    Write-Host(date).Year-($ordMonth + (date).Day)
+}
+Get-OrdinalDate   
+    #
+function Get-SquareNum([float]$num1){    
+    echo ($num1 * $num1)
+}
+Get-SquareNum 10  
+    #
+function Get-Product([int]$num1, [int]$num2, [int]$num3){   
+    echo ($num1 * $num2 * $num3)
+}
+Get-Product 5 5 5
