@@ -163,3 +163,5 @@ qprocess -replace '\s{2,}', ',' | select -first 10
 -split
 
 "cat","dog" -join ""
+
+"10.0.0.12" as [ipaddress] -as [bool]
