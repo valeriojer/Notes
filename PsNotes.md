@@ -141,4 +141,25 @@ for($i = 0; $i -le 255; $i++){
 
 $hash = @{}
 
+Text `"Question marks`"
 
+$text1 = "One Terabyte is $(1TB / 1GB) Gigabytes"
+"Hello`nline World"
+$text = @"
+Here is some text
+"$PWD" is your current path
+"@
+
+"{0:n3}" -f 123.45678
+"{0:d5}" -f 1
+
+gsv | select -First 10 | foreach{"The Service {0} is called '{1}': {2}" -f $_.name,$_.displayname,$_.status}
+
+"Hello John and johnthan" -replace "john ", "World"
+
+(ipconfig) -match 'IPv6'
+qprocess -replace '\s{2,}', ',' | select -first 10
+-csplit
+-split
+
+"cat","dog" -join ""
