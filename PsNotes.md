@@ -165,3 +165,8 @@ qprocess -replace '\s{2,}', ',' | select -first 10
 "cat","dog" -join ""
 
 "10.0.0.12" as [ipaddress] -as [bool]
+
+function Get-Product([int]$num1, [int]$num2, [int]$num3){
+    echo ($num1 * $num2 * $num3)
+}
+Get-Product 5 5 5
