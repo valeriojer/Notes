@@ -147,8 +147,7 @@ ________________________________________________________________________________
 #####Practical Exercise: Create Functions   
     #
 function Get-OrdinalDate(){
-    if((date).month -eq 6){$ordMonth=151}
-    Write-Host(date).Year-($ordMonth + (date).Day)
+    Write-Host (Date -UFormat %Y-%j)
 }
 Get-OrdinalDate   
     #
@@ -190,5 +189,66 @@ Get-KgTolbs Jeremy Valerio 19 97.0
 _______________________________________________________________________________________________________
 #####Practical Exercise: Regex
     #
+function Get-Netinfo(){
+    $ip= (ipconfig) -match "\s+IPv4 Address.*: ([\d\.]+)" 
+    echo $ip
+    $ip=$Matches[0]
+    $subnet= (ipconfig /all) -match "\s+Subnet Mask .*: ([\d\.]+)"
+    echo $subnet
+    $subnet=$Matches[0]
+    $gateway=(ipconfig /all) -match "\s+Default Gateway .*: ([\d\.]+)"
+    echo $gateway
+    $gateway=$Matches[0]
+
+    Write-Host IP: $ip
+    Write-host Subnet: $subnet
+    Write-Host Gateway: $gateway
+}
+Get-Netinfo
 
     #
+    
+    
+______________________________________________________________________________________________________
+function q($file,$line){
+    $content = get-content $file
+    foreach ($i in $content){
+        if ($i.startswith($line)){
+            return $i
+        }
+    }
+    
+    return $null
+}
+
+
+function q($arr){
+    ##$arr is an array and need to be put together by a /
+    return $arr -join('/')
+}
+
+function q(){
+
+    return ps | sort -Property name -Descending
+}
+
+function q($arr,$rows,$cols,$key){
+##look for the first look of key at index 0 and return the value at col index 9 of the same row
+    foreach ($i in $arr){
+        if($i[0] -eq $key){
+            return $i[9]
+        }
+    }
+return -1
+}
+
+function q(){
+##PROVIDED ON THE PIPELINE ==== ADVANED
+    Process{
+        $sum = $Var1 + $Var2
+    }
+}
+
+#CUSTOM DATE W/ -UFromat
+$fmt = "%Y%m%d"
+return Date -UFormat $fmt
