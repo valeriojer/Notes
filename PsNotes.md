@@ -170,3 +170,10 @@ function Get-Product([int]$num1, [int]$num2, [int]$num3){
     echo ($num1 * $num2 * $num3)
 }
 Get-Product 5 5 5
+
+<#This is a 
+a commented block
+#>
+
+ps | Export-csv C:\User\student\Desktop
+
