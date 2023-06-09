@@ -187,3 +187,8 @@ function Get-KgTolbs([parameter(Mandatory = $true)][string]$fname, [parameter(Ma
     echo $info
 }
 Get-KgTolbs Jeremy Valerio 19 97.0
+_______________________________________________________________________________________________________
+#####Practical Exercise: Regex
+    #
+
+    #
