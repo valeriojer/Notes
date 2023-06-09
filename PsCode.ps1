@@ -85,12 +85,12 @@ $myhost
 _______________________________________________________________________________________________________
 #####Practical Exercise: Arrays & Hash Tables
     #sing the following table of key-value pairs, apply each key-value to the empty hash tables.
-$employee1 = @{First='Mary'
+$employee1 = [ordered]@{First='Mary'
                 Last='Hopper'
                 Id='001'
                 Job='Software Developer'
                 }
-$employee2 = @{First='John'
+$employee2 = [ordered]@{First='John'
                 Last='Williams'
                 Id='002'
                 Job='Web Developer'
