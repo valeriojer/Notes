@@ -107,3 +107,40 @@ $employee1.Add('Status','Management')
 $employee2.Add('Status','Interediate')
 $employee3.Add('Status','Entry Level')
 _______________________________________________________________________________________________________
+#####Practical Exercise: Comparison and Condition
+    #Find and extract the model number from the provided lines of text. If there isn’t a model number then display to the user that a model number wasn’t found
+    #Check both lines for model numbers and report individually the line and model number if found.
+$line1 = "Do you have model number: MT5437 for john.doe@sharklasers.com?"
+$line2 = "What model number for john.doe@sharklasers.com?"
+$pattern = '[A-Za-z]{2}\d{2,5}'
+
+$line1,$line2 | ForEach-Object{
+    if ($_ -match $pattern){
+        write-host $matches[0]": $_"
+
+    }else{
+        Write-Host "No matches founded on $_"
+    }
+}
+___________________________________________________________________________________________________
+#####Practical Exercise: Looping & Iteration
+    Part 3
+    Use an array to iterate and open 
+    Notepad
+    MS Edge
+    MSpaint
+    Query the processes and display only the following information in order by process ID
+    Process ID
+    Process Name
+    The time the process started
+    The amount of time the process has spent on the processor
+    The amount of memory assigned to the process
+    
+foreach ($app in "notepad", "msedge", "mspaint")
+{
+    Start $app
+    ps $app | ft -Property id, name, starttime, TotalProcessorTime, VirtualMemorySize
+    (ps $app).Id > procs.txt
+    Stop-Process -Id (Get-Content procs.txt) -Force
+}
+_____________________________________________________________________________________________________
