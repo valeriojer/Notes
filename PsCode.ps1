@@ -161,3 +161,29 @@ function Get-Product([int]$num1, [int]$num2, [int]$num3){
     echo ($num1 * $num2 * $num3)
 }
 Get-Product 5 5 5
+_____________________________________________________________________________________________________
+#####Practical Exercise: Function Parameters
+    #
+function Get-Hypotenuse([int]$a, [int]$b ){
+    $c=(($a * $a) + ($b * $b))
+    $c=[Math]::Sqrt($c)
+    Write-host $c 
+}
+Get-Hypotenuse 3 4  
+    #
+function Get-TriAngle([int]$a, [int]$b ){
+    $c=(180 - ($a  + $b))
+    Write-host $c 
+}
+Get-TriAngle 30 60    
+    #
+function Get-KgTolbs([parameter(Mandatory = $true)][string]$fname, [parameter(Mandatory = $true)][string]$lname, [parameter(Mandatory = $true)][int]$age, [parameter(Mandatory = $true)][float]$weight){
+    $info= [ordered]@{"First Name" = $fname
+                      "Last Name" = $lname
+                       Age=$age
+                      Weight=$weight    
+                     }
+    $info.Weight = [math]::Round(($weight * 2.2))
+    echo $info
+}
+Get-KgTolbs Jeremy Valerio 19 97.0
