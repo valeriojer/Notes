@@ -305,14 +305,15 @@ function q5($path) {
 function q6 {
     <# Return the sum of all elements provided on the pipeline
 	#>
+    Begin{
+        $sum = 0
+    }
     Process{
-            $sum = 0
-
-            foreach($a in $input){
-            $sum += $a
-            }
+            $sum += $_
+    }
+    end{
         return $sum
-        }
+    }
 }
 function q7 {
 	<# Return only those commands whose noun is process #>
