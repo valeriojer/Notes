@@ -191,21 +191,17 @@ ________________________________________________________________________________
     #
 function Get-Netinfo(){
     $ip= (ipconfig) -match "\s+IPv4 Address.*: ([\d\.]+)" 
-    echo $ip
-    $ip=$Matches[0]
-    $subnet= (ipconfig /all) -match "\s+Subnet Mask .*: ([\d\.]+)"
-    echo $subnet
-    $subnet=$Matches[0]
-    $gateway=(ipconfig /all) -match "\s+Default Gateway .*: ([\d\.]+)"
-    echo $gateway
-    $gateway=$Matches[0]
 
-    Write-Host IP: $ip
-    Write-host Subnet: $subnet
-    Write-Host Gateway: $gateway
+    $subnet= (ipconfig /all) -match "\s+Subnet Mask .*: ([\d\.]+)"
+
+    $gateway=(ipconfig /all) -match "\s+Default Gateway .*: ([\d\.]+)"
+   
+
+    Write-Host IP: $ip.trimStart("IPv4 Address. . . . . . . . . . . :")
+    Write-host Subnet: $subnet.trimStart("Subnet Mask . . . . . . . . . . :")
+    Write-Host Gateway: $gateway.trimStart("Default Gateway . . . . . . . . . . :")
 }
 Get-Netinfo
-
     #
     
     
