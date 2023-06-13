@@ -9,9 +9,9 @@ get-ciminstance -classname win32_logicaldisk
 get-ciminstance -classname win32_logicaldisk -filter "Drivetype = 3" | gm
 set-executionpolicy  
 winrm get winrm/congif
-get-item WSman:\local
-invoke-command -comptername file-server{get srevice}
-
+get-item WSMAN:\localhost|client\TrustedHosts
+invoke-command -comptername file-server{get service}
+set-item WSMAN:\Localhost\client\TrustedHosts -value "File-Server,Domain-Controll"
 $session = New-pssession -computername file-server
 enter-pssession -session $session
 Invoke-command -session $session {get service}
