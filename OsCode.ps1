@@ -29,3 +29,4 @@ PB1 What syntax do PowerShell cmdlets follow?
 6 what command will list all things that make up a PowerShell object?
   gm
 PA1 
+Get-CimInstance win32_service | where name -eq "legoland" | select name,description
