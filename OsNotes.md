@@ -19,9 +19,20 @@ test-path -path $profile.AllUsersCurrenthost
 $profile| gm -type NoteProperty
 new-item -itemtype file -path $profile -Force
 
-
+https://os.cybbh.io/public/os/latest/index.html
 regedit.exe
 reg add, reg query, reg delete
 
 New-PSDrive -name HKU -SSProvider registry -root HKEY_USERS
+HKLM\BCD00000000
+HKLM\SAM\SAM
+HKU\<>\Software\Policies\Microsoft\windows\system\script
+# paths for persistence
+HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+HKU\<SID>\Software\Microsoft\Windows\CurrentVersion\Run
+HKLM\SYSTEM\CurrentControlSet\services
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+
   
