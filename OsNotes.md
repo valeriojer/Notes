@@ -18,3 +18,10 @@ Invoke-command -session $session {get service}
 test-path -path $profile.AllUsersCurrenthost
 $profile| gm -type NoteProperty
 new-item -itemtype file -path $profile -Force
+
+
+regedit.exe
+reg add, reg query, reg delete
+
+New-PSDrive -name HKU -SSProvider registry -root HKEY_USERS
+  
