@@ -1,6 +1,8 @@
 10.50.35.235
 http://10.50.21.56:8000/challenges
 https://os.cybbh.io/public/os/latest/index.html
+xfreerdp /u:andy.dwyer /v:10.50.36.236 /dynamic-resolution +glyph-cache +clipboard
+
 
 get-help get-process -online
 set-alias -name ip -value getpgetnetipdress
@@ -44,3 +46,5 @@ set-itemproperty remove-get
 
 gci HKLM:\Software\Microsoft\Windows\CurrentVersion\
 gi HKLM:\Software\Microsoft\Windows\CurrentVersion\
+
+Get-ChildItem 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion\ProfileList'
