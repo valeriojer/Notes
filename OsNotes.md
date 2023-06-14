@@ -35,4 +35,10 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
 HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
 HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
 
-  
+gci
+get-itemproerty
+get-item
+set-itemproperty remove-get  
+
+gci HKLM:\Software\Microsoft\Windows\CurrentVersion\
+gi HKLM:\Software\Microsoft\Windows\CurrentVersion\
