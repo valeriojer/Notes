@@ -1,4 +1,4 @@
-10.50.36.85
+10.50.35.235
 
 get-help get-process -online
 set-alias -name ip -value getpgetnetipdress
