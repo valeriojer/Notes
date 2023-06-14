@@ -1,4 +1,6 @@
 10.50.35.235
+http://10.50.21.56:8000/challenges
+https://os.cybbh.io/public/os/latest/index.html
 
 get-help get-process -online
 set-alias -name ip -value getpgetnetipdress
@@ -19,7 +21,7 @@ test-path -path $profile.AllUsersCurrenthost
 $profile| gm -type NoteProperty
 new-item -itemtype file -path $profile -Force
 
-https://os.cybbh.io/public/os/latest/index.html
+
 regedit.exe
 reg add, reg query, reg delete
 
