@@ -48,3 +48,6 @@ gci HKLM:\Software\Microsoft\Windows\CurrentVersion\
 gi HKLM:\Software\Microsoft\Windows\CurrentVersion\
 
 Get-ChildItem 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion\ProfileList'
+
+
+### UNIX
