@@ -68,4 +68,19 @@ dir=$(ls -lisa)
 stderr = 2 
 stdout = 1
 stdinr = 0
-
+/bin -binary exeacutable
+/sbin -system manitance
+/home -users home
+/usr -the users binary
+/etc -system configs
+/var -variable data
+/boot -boot files
+/dev -device files
+/lib -kernal mod
+/mout -gernic mout point for device
+/proc -procees 
+/opt -packet software
+/media -removeable media 
+id -id info 
+ls -lisa /bin/dd
+find / -perm / 4000 2>
