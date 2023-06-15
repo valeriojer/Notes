@@ -31,7 +31,7 @@ New-PSDrive -name HKU -SSProvider registry -root HKEY_USERS
 HKLM\BCD00000000
 HKLM\SAM\SAM
 HKU\<>\Software\Policies\Microsoft\windows\system\script
-# paths for persistence
+### paths for persistence
 HKLM\Software\Microsoft\Windows\CurrentVersion\Run
 HKU\<SID>\Software\Microsoft\Windows\CurrentVersion\Run
 HKLM\SYSTEM\CurrentControlSet\services
@@ -50,4 +50,4 @@ gi HKLM:\Software\Microsoft\Windows\CurrentVersion\
 Get-ChildItem 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion\ProfileList'
 
 
-### UNIX
+# UNIX
