@@ -51,3 +51,21 @@ Get-ChildItem 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion\ProfileList'
 
 
 # UNIX
+which -path for a exe 
+hostname -box name
+whoami -users signed in
+who -everyone signed in
+ifconfig -network config on box
+arp/ip neigh -mac addr on the network
+ip route show/route -where the packets are going
+ss -ports
+netstat -anop 
+sudo iptables -L -firewall rules
+sudo -l -shows rules
+--help 
+a="100"
+dir=$(ls -lisa)
+stderr = 2 
+stdout = 1
+stdinr = 0
+
