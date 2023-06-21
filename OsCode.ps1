@@ -30,3 +30,5 @@ PB1 What syntax do PowerShell cmdlets follow?
   gm
 PA1 
 Get-CimInstance win32_service | where name -eq "legoland" | select name,description
+
+dd if=/home/bombadil/mbroken bs=1 skip=446 count=16 | md5sum
