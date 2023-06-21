@@ -2,6 +2,7 @@
 http://10.50.21.56:8000/challenges
 https://os.cybbh.io/public/os/latest/index.html
 xfreerdp /u:andy.dwyer /v:10.50.36.236 /dynamic-resolution +glyph-cache +clipboard
+ssh -J user@winops user@linux
 
 
 get-help get-process -online
@@ -86,7 +87,7 @@ ls -lisa /bin/dd
 find / -perm / 4000 2>
 
 
-Linux boot
+# Linux boot
 BIOS -POST/integrity checks / device tree
 MBR  -Disk partiton/512 bytes / lsblk /dev/hda
 GRUB  -/boot/grub/menu.lst
@@ -94,3 +95,8 @@ Kernel  -/sbin/init or systemd daemon / ls -l /sbin/init
 Init(SysV or SystemD) -/etc/init.d/ / service --status
 Runlevels 0 halt / 1 single user / 2 multiuser w/o net / 3 multiuser w net / 4 used / 5 GUI / 6 reboot
           /etc/init.d/rc     /etc/systemd/system
+
+sudo dmidecode -t bios
+lsblk
+sudo xxd -l 512 -g 1 /dev/vda
+
