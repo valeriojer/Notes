@@ -126,3 +126,4 @@ sc query
 get-nettconnrction
 
 .\strings -s C:\windows\system32\*.exe | findstr /i autoelevate
+
