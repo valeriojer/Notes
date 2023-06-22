@@ -100,3 +100,20 @@ sudo dmidecode -t bios
 lsblk
 sudo xxd -l 512 -g 1 /dev/vda
 
+# validity
+Get-Process SMSS,CSRSS,LSASS | Sort -Property Id
+
+Get-Process | Select Name, Id, Description | Sort -Property Id
+
+ps chrome | foreach {$a} {$_.modules} | more
+ps -name "*chrome*" | select -expandproperty modules | where-object modulename -like '*chrome*' | more
+
+
+Get-Process | Select Name, Id, Path
+Get-Ciminstance Win32_service | Select Name, Processid, Pathname
+
+Get-Process | Select Name, Priorityclass
+Tasklist /m
+
+schtasks /query | more
+Get-ScheduledTask | Select * | Select -First 5
