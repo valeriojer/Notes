@@ -108,6 +108,8 @@ Get-Process | Select Name, Id, Description | Sort -Property Id
 ps chrome | foreach {$a} {$_.modules} | more
 ps -name "*chrome*" | select -expandproperty modules | where-object modulename -like '*chrome*' | more
 
+get-service alg | format-list *
+get-service | where-object {$_.status -eq "Running"}
 
 Get-Process | Select Name, Id, Path
 Get-Ciminstance Win32_service | Select Name, Processid, Pathname
@@ -115,5 +117,12 @@ Get-Ciminstance Win32_service | Select Name, Processid, Pathname
 Get-Process | Select Name, Priorityclass
 Tasklist /m
 
+
 schtasks /query | more
 Get-ScheduledTask | Select * | Select -First 5
+
+tasklist /fo:csv
+sc query 
+get-nettconnrction
+
+.\strings -s C:\windows\system32\*.exe | findstr /i autoelevate
