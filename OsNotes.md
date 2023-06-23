@@ -126,17 +126,38 @@ sc query
 get-nettconnrction
 
 .\strings -s C:\windows\system32\*.exe | findstr /i autoelevate
-
+#DAEMONS
 disown -a && exit # Close a shell/terminal and force all children to be adopted
 Remedy - ‘ulimit -u 30’ sets the max processes a user can run at 30
 Malicious processes are sometimes orphaned and named to make it look like a daemon process ‘ps --ppid 1 -lf’
 
+ps --ppid 1 -lf
+ls -l /etc/init.d
+cat /etc/init.d/cron
+service cron {start,stop,restart}
+#ORPHAN AND ZOMBIES
 'jobs’ - Display List of Jobs running in the background
 ‘fg’ or ‘bg’ - Push / Pull jobs to / from the foreground / background
 ‘kill %<job number>’ - Terminate the process by job number
 ‘[ctrl -z]’ or ‘kill -19’ - stop / suspend the job
 ‘kill -9 <PID>’ or ‘pkill -9 <process name>’
+
+gtop
+htop 
+top
+ps -a
+ps -elf
+
+#CRON TAB 
 ‘man cron’ - to see an example of a daemon that starts during the boot process
 
 system cron on /etc/crontab
 user cron on /var/spool/cron/crontabs/
+
+
+ls -l /etc/cron.d
+cat /etc/cron.d/sysstat
+cat /etc/crontab
+ls -l /etc/cron.daily
+
+ls -l /var/spool/cron/crontabs/
