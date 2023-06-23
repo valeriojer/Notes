@@ -127,3 +127,16 @@ get-nettconnrction
 
 .\strings -s C:\windows\system32\*.exe | findstr /i autoelevate
 
+disown -a && exit # Close a shell/terminal and force all children to be adopted
+Remedy - ‘ulimit -u 30’ sets the max processes a user can run at 30
+Malicious processes are sometimes orphaned and named to make it look like a daemon process ‘ps --ppid 1 -lf’
+
+'jobs’ - Display List of Jobs running in the background
+‘fg’ or ‘bg’ - Push / Pull jobs to / from the foreground / background
+‘kill %<job number>’ - Terminate the process by job number
+‘[ctrl -z]’ or ‘kill -19’ - stop / suspend the job
+‘kill -9 <PID>’ or ‘pkill -9 <process name>’
+‘man cron’ - to see an example of a daemon that starts during the boot process
+
+system cron on /etc/crontab
+user cron on /var/spool/cron/crontabs/
