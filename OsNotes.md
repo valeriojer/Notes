@@ -161,3 +161,8 @@ cat /etc/crontab
 ls -l /etc/cron.daily
 
 ls -l /var/spool/cron/crontabs/
+
+lsof -a -p 1352
+ls -l /proc/1352/fd
+sudo lsof -p 1352
+sudo lsof -n -i :123
