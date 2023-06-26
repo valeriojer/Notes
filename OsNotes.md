@@ -181,7 +181,10 @@ pull info from
           Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\UserSettings\*' (Windows 1709 & 1803)
           Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\state\UserSettings\*' (Windows 1809 and newer)
     Recycle Bin
+          gci 'C:\$RECYCLE.BIN' -Recurse -Verbose -Force | select *
+          gci 'C:\$RECYCLE.BIN' -Recurse -Force
     Prefetch
+          gci -Path 'C:\Windows\Prefetch' -ErrorAction Continue | select * | select -first 5
     Jump Lists
     Recent FileS
     Browser Artifacts
