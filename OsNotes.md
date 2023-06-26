@@ -3,7 +3,10 @@ http://10.50.21.56:8000/challenges
 https://os.cybbh.io/public/os/latest/index.html
 xfreerdp /u:andy.dwyer /v:10.50.36.236 /dynamic-resolution +glyph-cache +clipboard
 ssh -J user@winops user@linux
-
+# sysinternals download
+net use x: \\live.sysinternals.com\Tools\
+xcopy /s x:\ c:\sysinternals\
+net use x: /d
 
 get-help get-process -online
 set-alias -name ip -value getpgetnetipdress
@@ -229,9 +232,9 @@ Get-Content "C:\users\$env:username\AppData\Roaming\Microsoft\Windows\PowerShell
 # Window Artifacts
 pull info from
     UserAssist
-          View executable Files run
+                    View executable Files run
           Get-ItemProperty 'REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count'
-          View Shortcut files executed
+                    View Shortcut files executed
           Get-ItemProperty 'REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\Count'      
     Windows Background Activity Moderator (BAM)
           Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\UserSettings\*' (Windows 1709 & 1803)
@@ -244,14 +247,14 @@ pull info from
     Jump Lists
           gci -Recurse C:\Users\*\AppData\Roaming\Microsoft\Windows\Recent -ErrorAction Continue | select FullName, LastAccessTime
     Recent FileS
-          List Files in Recent Docs
+                    List Files in Recent Docs
           gci 'REGISTRY::HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs'
-          Convert File Hex to Unicode
+                    Convert File Hex to Unicode
           [System.Text.Encoding]::Unicode.GetString((gp "REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt")."0") 
       Browser Artifacts
-          History will record the access to the file on the website that was accessed via a link.
+                    History will record the access to the file on the website that was accessed via a link.
           .\strings.exe 'C:\Users\<username>\AppData\Local\Google\Chrome\User Data\Default\History'
-          Find FQDNs in Sqlite Text Files
+                    Find FQDNs in Sqlite Text Files
           $History = (Get-Content 'C:\users\<username>\AppData\Local\Google\Chrome\User Data\Default\History') -replace "[^a-zA-Z0-9\.\:\/]",""
           $History| Select-String -Pattern "(https|http):\/\/[a-zA-Z_0-9]+\.\w+[\.]?\w+" -AllMatches|foreach {$_.Matches.Groups[0].Value}| ft
 #getting users sid
