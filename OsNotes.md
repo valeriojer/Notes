@@ -166,3 +166,28 @@ lsof -a -p 1352
 ls -l /proc/1352/fd
 sudo lsof -p 1352
 sudo lsof -n -i :123
+
+# Windows Auditing
+SYSTEM/APPLICATION/SECURITY
+
+# Window Artifacts
+pull info from
+    UserAssist
+          View executable Files run
+          Get-ItemProperty 'REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count'
+          View Shortcut files executed
+          Get-ItemProperty 'REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{F4E57C4B-2036-45F0-A9AB-443BCFE33D9F}\Count'      
+    Windows Background Activity Moderator (BAM)
+          Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\UserSettings\*' (Windows 1709 & 1803)
+          Get-Itemproperty 'HKLM:\SYSTEM\CurrentControlSet\Services\bam\state\UserSettings\*' (Windows 1809 and newer)
+    Recycle Bin
+    Prefetch
+    Jump Lists
+    Recent FileS
+    Browser Artifacts
+#getting users sid
+get-wmiobject win32_useraccount | select name,sid (PowerShell)
+Get-LocalUser | select Name,SID (PowerShell)
+wmic useraccount get name,sid (CMD.EXE ONLY)
+
+
