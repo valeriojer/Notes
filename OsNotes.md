@@ -169,6 +169,62 @@ sudo lsof -n -i :123
 
 # Windows Auditing
 SYSTEM/APPLICATION/SECURITY
+    View entire auditpol list
+
+        auditpol /get /category:*
+
+    Set File SYstem subcategory to audit
+
+        auditpol /set /subcategory:"File System"
+
+    Remove File System subcategory auditing
+
+        auditpol /set /subcategory:"File System" /success:disable
+
+    To list the global object access auditing entries set on files or folders:
+
+        auditpol /resourceSACL /type:File /view
+
+    To list the global object access auditing entries set on Registry Keys
+
+        auditpol /resourceSACL /type:Key /view
+eventvwr
+
+    Located in C:\Windows\System32\Winevt folder.
+
+    show all logs
+
+        wevtutil el
+
+    get log info
+
+        wevtutil gli security
+
+    get last 3 events
+
+        wevtutil qe security /c:3 /f:text
+    View newest 10 System Logs
+
+        Get-EventLog -LogName System -Newest 10
+
+    View the entire message field in the Security Log
+
+        Get-Eventlog -LogName Security | ft -wrap
+
+    Search logs with mutiple criteria
+
+        get-winevent -FilterHashtable @{logname="security";id="4624"} | select -first 5 | ft -wrap
+  Allows the capture of the input and output of Windows PowerShell commands into text-based transcripts.
+
+Start-Transcript
+
+View Powershell console History
+
+Get-History
+
+View entire powershell History
+
+Get-Content "C:\users\$env:username\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
 
 # Window Artifacts
 pull info from
@@ -186,11 +242,21 @@ pull info from
     Prefetch
           gci -Path 'C:\Windows\Prefetch' -ErrorAction Continue | select * | select -first 5
     Jump Lists
+          gci -Recurse C:\Users\*\AppData\Roaming\Microsoft\Windows\Recent -ErrorAction Continue | select FullName, LastAccessTime
     Recent FileS
-    Browser Artifacts
+          List Files in Recent Docs
+          gci 'REGISTRY::HKEY_USERS\*\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs'
+          Convert File Hex to Unicode
+          [System.Text.Encoding]::Unicode.GetString((gp "REGISTRY::HKEY_USERS\*\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs\.txt")."0") 
+      Browser Artifacts
+          History will record the access to the file on the website that was accessed via a link.
+          .\strings.exe 'C:\Users\<username>\AppData\Local\Google\Chrome\User Data\Default\History'
+          Find FQDNs in Sqlite Text Files
+          $History = (Get-Content 'C:\users\<username>\AppData\Local\Google\Chrome\User Data\Default\History') -replace "[^a-zA-Z0-9\.\:\/]",""
+          $History| Select-String -Pattern "(https|http):\/\/[a-zA-Z_0-9]+\.\w+[\.]?\w+" -AllMatches|foreach {$_.Matches.Groups[0].Value}| ft
 #getting users sid
 get-wmiobject win32_useraccount | select name,sid (PowerShell)
 Get-LocalUser | select Name,SID (PowerShell)
 wmic useraccount get name,sid (CMD.EXE ONLY)
-
-
+          
+          
