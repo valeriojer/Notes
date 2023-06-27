@@ -261,5 +261,72 @@ pull info from
 get-wmiobject win32_useraccount | select name,sid (PowerShell)
 Get-LocalUser | select Name,SID (PowerShell)
 wmic useraccount get name,sid (CMD.EXE ONLY)
-          
-          
+
+# Linux Auditing & Logging
+Authentication
+          /var/log/auth.log - Authentication related events
+          /var/run/utmp - Users currently logged in
+          /var/log/wtmp - History file for utmp
+          /var/log/btmp - Failed login attempts
+Application
+          apache - Web Server (dir)
+          apt - Package Manager (dir)
+          /var/log/mysql.log
+System
+          /var/log/messages - Legacy Catch all
+          /var/log/syslog - Ubuntu/Debian Catch all
+          dmesg = Device Messenger (queires /proc/kmsg) 
+Logging At A Glance
+          Location : /var/log
+
+          Config File : /etc/rsyslog.conf
+              Log entries follow syslog standard facility.severity
+                    facility = what program, or part of system, log is from 
+                    severity = urgency
+          Service : /usr/sbin/rsyslogd
+               User space daemon - Reads messages written to /dev/log and formats and stores them based on /etc/rsyslog.conf rules.
+                    syslog() via libc  
+                    kernel ring buffer    
+                    audit records via audit subsystem (auditd)
+
+Facility Codes
+0   kernel messages
+1   user-level messages
+2   mail system
+3   system daemons
+4   security/authorization messages
+5   messages generated internally by syslogd
+6   line printer subsystem
+7   network news subsystem
+8   UUCP subsystem
+9   clock daemon
+10  security/authorization messages
+11  FTP daemon
+12  NTP subsystem13|log audit
+....FG FOR MORE
+
+Severity Codes
+0  emerg, panic:  Emergency: system is unusable
+1  alert:         Action must be taken immediately
+2  crit:          Critical conditions
+3  err, error:    Error conditions
+4  warn, warning: Warning conditions
+5  notice:        Normal but significant condition
+6  info:          Informational messages
+7  Debug:         Debug-level messages
+
+logrotate
+          /etc/logrotate.conf
+Useful Logging Commands
+          tail -f - Continuously show end of file
+          less /var/log/syslog - View Log in page viewer
+          logger - Send a user generated message to system Log i.e. Starting Update
+          > /var/log/messages - Wipes Logs
+          last -f /var/log{wtmp,btmp} - Needed to view data files
+Auditing vs Logging
+          Logging is system/application defined
+          Auditing is user defined
+          [kauditd] - runs at the kernel level and can monitor individual syscalls (/sbin/auditd)
+          auditctl - control/config command
+          aureport - summary reports of audit logs
+          ausearch - query audit logs
