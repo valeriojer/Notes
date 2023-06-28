@@ -333,3 +333,73 @@ Auditing vs Logging
           
 xpath -q -e "//@addr|//@portid" output.xml | grep -B1 portid | grep -v '-' | md5sum
 
+# Memory Analysis
+Volatile Memory
+    Non-persistent
+    Requires power to maintain the stored information; it retains its contents while powered on but when the power is interrupted, the stored data is immediately lost
+        RAM
+Non-Volatile Memory
+    Persistent
+    Does not require a continuous power supply to retain the data stored in a computing device
+        HDD
+        USB
+Order of Volatility - the halflife of data
+    1 CPU registers, cache
+    2 Routing table, ARP cache, process table, kernel stats, memory
+    3 Temporary file systems
+    4 Disk
+    5 Remote logging and monitoring data
+    6 Physical configuration, network topology
+    7 Archival media - backups
+Volatility
+    Each operating system has its own memory acquisition tool called Persistent Memory (pmem)                    
+          Linpmem
+          Winpmem
+          OSXpmem
+          
+.\volatility.exe -h
+.\volatility.exe -f .\cridex.vmen imageinfo
+.\volatility.exe -f .\cridex.vmem --profile=WinXPSP2x86 -h
+.\volatility.exe -f .\cridex.vmem --profile=WinXPSP2x86 -pstree
+.\volatility.exe -f .\cridex.vmem --profile=WinXPSP2x86 procdump -p 1640 -D .
+get-filehash .\executable.1640.exe
+https://www.virustotal.com/gui/home/upload
+.\volatility.exe -f .\cridex.vmem --profile=WinXPSP2x86 memdump -p 1640 -D .
+.\strings.exe -accepteula C:\Users\andy.dwyer\Desktop\Memory_Analysis\1640.dmp > C:\Users\andy.dwyer\Desktop\Memory_Analysis\1640.txt
+.\volatility.exe -f .\cridex.vmem --profile=WinXPSP2x86 connections
+.\volatility.exe -f .\cridex.vmem --profile=WinXPSP2x86 connscan 
+
+# Active Directory 
+
+Get-Command -Module activedirectory
+Get-ADDefaultDomainPasswordPolicy
+Get-ADForest
+Get-ADDomain
+Get-ADGroup -Filter *
+Get-ADGroup -Identity 'Administrators'
+Get-ADGroupMember -Identity 'Administrators' -Recursive
+get-ADUser -Identity 'Nina.Webster' -Properties Description
+
+Scenario 1: Find a user already on the box
+get-aduser -filter {Enabled -eq "FALSE"} -properties name, enabled
+Enable-ADAccount -Identity guest
+Set-AdAccountPassword -Identity guest -NewPassword (ConvertTo-SecureString -AsPlaintext -String "PassWord12345!!" -Force)
+Add-ADGroupMember -Identity "Domain Admins" -Members guest
+
+Scenario 2: Create a new user on the box
+Get-ADuser -filter * | select distinguishedname, name
+New-ADUser -Name "Bad.Guy" -AccountPassword (ConvertTo-SecureString -AsPlaintext -String "PassWord12345!!" -Force) -path "OU=3RD PLT,OU=CCO,OU=3RDBN,OU=WARRIORS,DC=army,DC=warriors"
+Enable-ADAccount -Identity "Bad.Guy"
+Add-ADGroupMember -Identity "Domain Admins" -Members "Bad.Guy"
+Remove-ADUser -Identity "Bad.Guy"
+Remove-ADGroupMember -Identity "Domain Admins" -Members guest
+Disable-AdAccount -Identity Guest
+
+2.3 Enumerate Users from a DCO perspective
+Get-AdGroupMember -identity "Domain Admins" -Recursive | %{Get-ADUser -identity $_.DistinguishedName} | select name, Enabled
+
+2.4 Display Resultant Set of Policy
+gpresult /user Administrator /v
+
+3.1 AD Group Nesting Flaws
+(Get-AdGroupMember -Identity 'domain admins').Name
