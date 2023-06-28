@@ -330,5 +330,6 @@ Auditing vs Logging
           auditctl - control/config command
           aureport - summary reports of audit logs
           ausearch - query audit logs
-
+          
+xpath -q -e "//@addr|//@portid" output.xml | grep -B1 portid | grep -v '-' | md5sum
 
