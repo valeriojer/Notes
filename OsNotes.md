@@ -405,3 +405,28 @@ gpresult /user Administrator /v
 (Get-AdGroupMember -Identity 'domain admins').Name
 
 # TEST REVIEW
+xfreerdp /u:andy.dwyer /v:10.50.36.236 /dynamic-resolution +glyph-cache +clipboard
+ssh -J user@winops user@linux
+6 win Q
+4 lin Q
+
+## Connections
+netstat -anob (lin)
+netstat -anop (win)
+## processes
+ps -elf (lin)
+systemctl 
+top for live connection
+
+start mec what made it turn on (Job or user or script)
+
+### paths for persistence
+HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+HKU\<SID>\Software\Microsoft\Windows\CurrentVersion\Run
+crontab 
+schtask 
+profiles powershell and linux
+
+## window artifacts 
+
+## adituing
