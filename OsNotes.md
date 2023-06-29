@@ -289,7 +289,7 @@ Logging At A Glance
                     kernel ring buffer    
                     audit records via audit subsystem (auditd)
 
-Facility Codes
+Facility Codesnet use * "\\file-server\warrior share"
 0   kernel messages
 1   user-level messages
 2   mail system
