@@ -1,6 +1,10 @@
 https://net.cybbh.io/public/networking/latest/index.html
 http://10.50.20.162:8000/
-
+JB Info
+    Student#: student19
+    Command: ssh student@10.50.23.2 -X
+    Password: password
+    
 # Network Fundamentails
 bit = 1
 nibble = 4
