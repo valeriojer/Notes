@@ -35,3 +35,32 @@ ether type
 Tcp
 Udp
 
+# Packet Creation and Socket Programming
+User Space Sockets
+    Stream Sockets
+    Datagram Sockets
+Kernel Space Sockets
+    Raw Sockets
+
+import socket
+  s = socket.socket(socket.FAMILY, socket.TYPE, socket.PROTOCOL)
+family constants should be: AF_INET (default), AF_INET6, AF_UNIX
+type constants should be: SOCK_STREAM (default), SOCK_DGRAM, SOCK_RAW
+proto constants should be: 0 (default), IPPROTO_RAW
+
+# network scanning
+nmap [Options] [Target IP/ Subnet]
+nc [Options] [Target IP] [Target Port]
+nmap -A -T4 --min-rate 10000 -vvvv 10.50.30.212 # TCP port scan
+nc 172.16.140.33 2086 #banner grab
+wget -r ftp://10.50.30.212 #get content from a port 
+emo web.png #opens a png
+ss -ntulp
+sudo nmap -sU -T4 172.16.182.110 -p 2000-2999 #search the system for udp ports
+nc -zuvnw1 172.16.140.33 2000-2200 #search the system for udp ports
+nc 172.16.140.33 2086 -u #banner grab udp port
+
+rtr>>>  show config 
+        sudo ifconfig 
+        ip addr
+        ip nei
