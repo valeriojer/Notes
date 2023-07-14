@@ -60,6 +60,8 @@ sudo nmap -sU -T4 172.16.182.110 -p 2000-2999 #search the system for udp ports
 nc -zuvnw1 172.16.140.33 2000-2200 #search the system for udp ports
 nc 172.16.140.33 2086 -u #banner grab udp port
 
+# ssh tunneling
+
 rtr>>>  show config 
         sudo ifconfig 
         ip addr
