@@ -61,6 +61,23 @@ nc -zuvnw1 172.16.140.33 2000-2200 #search the system for udp ports
 nc 172.16.140.33 2086 -u #banner grab udp port
 
 # ssh tunneling
+ssh <user>@<ip> -L <port>:<tgt ip>:<tgt port>
+ip for alt ssh port -p 
+ihost>>> ssh toby@toby-host -L 2000:127.0.0.1:80 -NT 
+wget -r 127.0.0.1:2000
+ssh -p 2000 mike@127.0.0.1
+ihost>>> ssh toby@loby-host -L 2000:<john>:1111 -NT
+ihost>>> ssh -p 2000 john@172.0.0.1 -L 2001:<carlton>:23 -NT
+telnet 127.0.0.1 2001
+
+chost>>> ssh john@john-host -p 1111 -R 2999: 127.0.0.1:3443 -NT
+ihost>>> ssh -p 2000 john@127.0.0.1
+jhost>>> ssh -p 2999 carlton@127.0.0.1
+ihost>>> ssh -p 2000 john@127.0.0.1 -L 2002:127.0.0.1:2999 -nt
+ihost>>> ssh -p 2002 carlton@127.0.0.1
+
+ihost>>> ssh -p 2002 carlton@127.0.0.1 -D 9050 -NT
+ihost>>> proxychains ./scan or nmap or wget or ftp
 
 rtr>>>  show config 
         sudo ifconfig 
