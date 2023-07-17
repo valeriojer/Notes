@@ -4,6 +4,8 @@ JB Info
     Student#: student19
     Command: ssh student@10.50.23.2 -X
     Password: password
+
+    net1_comrade19:privet19
     
 # Network Fundamentails
 bit = 1
@@ -54,7 +56,7 @@ nc [Options] [Target IP] [Target Port]
 nmap -A -T4 --min-rate 10000 -vvvv 10.50.30.212 # TCP port scan
 nc 172.16.140.33 2086 #banner grab
 wget -r ftp://10.50.30.212 #get content from a port 
-emo web.png #opens a png
+eom web.png #opens a png
 ss -ntulp
 sudo nmap -sU -T4 172.16.182.110 -p 2000-2999 #search the system for udp ports
 nc -zuvnw1 172.16.140.33 2000-2200 #search the system for udp ports
