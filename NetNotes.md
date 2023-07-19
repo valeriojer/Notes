@@ -61,7 +61,10 @@ ss -ntulp
 sudo nmap -sU -T4 172.16.182.110 -p 2000-2999 #search the system for udp ports
 nc -zuvnw1 172.16.140.33 2000-2200 #search the system for udp ports
 nc 172.16.140.33 2086 -u #banner grab udp port
-
+rtr>>>  show config 
+        sudo ifconfig 
+        ip addr
+        ip nei
 # ssh tunneling
 ssh <user>@<ip> -L <port>:<tgt ip>:<tgt port>
 ip for alt ssh port -p 
@@ -81,7 +84,7 @@ ihost>>> ssh -p 2002 carlton@127.0.0.1
 ihost>>> ssh -p 2002 carlton@127.0.0.1 -D 9050 -NT
 ihost>>> proxychains ./scan or nmap or wget or ftp
 
-rtr>>>  show config 
-        sudo ifconfig 
-        ip addr
-        ip nei
+
+# Network Analysis
+p0f
+
