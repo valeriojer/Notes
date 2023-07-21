@@ -87,4 +87,45 @@ ihost>>> proxychains ./scan or nmap or wget or ftp
 
 # Network Analysis
 p0f
+wireshark 
+tcpdump
+
+# Filtering 
+sudo iptables -L
+sudo iptables -t nat -L
+sudo iptables -t mangle -L
+sudo iptables -F (flushes the box)
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
+sudo iptables -P INPUT DROP 
+sudo iptables -A INPUT -p tcp -m multiport --ports 6010,6011,6012 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp -m multiport --ports 6010,6011,6012 -j ACCEPT
+sudo iptables -A INPUT -P tcp --sport 22 -j ACCEPT
+sudo iptables -A OUTPUT -P tcp --dport 22 -j ACCEPT
+sudo iptables -L -n --Line-Numbers
+sudo iptables -A INPUT -P icmp -j ACCEPT
+
+sudo nft add chain ip Wev OUTPUT {type fillter hook uptpts}
+sudo nft add chain ip Wev INPUT { type filter hook input priority 0 \: policy accept \: }
+sudo nft flush ruleset
+sudo nft list ruleset
+
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to 1.1.1.1 (change sip)
+iptables -t nat -A POSTROUTING -p tcp -o eth0 -j SNAT --to 1.1.1.1:9001 (change sip and sport)
+iptables -t nat -A PREROUTING -i eth0 -j DNAT --to 10.0.0.1 (change dip) 
+iptables -t nat -A PREROUTING -p tcp -i eth0 -j DNAT --to 10.0.0.1:8080 (change dip and dport)
+nft add table ip NAT
+nft add chain ip NAT PREROUTING {type nat hook prerouting priority 0 \; }
+nft add chain ip NAT POSTROUTING {type nat hook postrouting priority 100 \; }
+nft add rule ip NAT POSTROUTING ip saddr 10.1.0.2 oif eth0 snat 144.15.60.11
+nft add rule ip NAT PREROUTING iif eth0 tcp dport { 80, 443 } dnat 10.1.0.3
+nft add rule ip NAT POSTROUTING ip saddr 10.1.0.0/24 oif eth0 masquerade
+nft add rule ip NAT PREROUTING tcp dport 80 redirect to 8080
+
+
+## Network based
+
+ps -elf | grep snort | grep -v grep
+ls /etc/snort
+cat /etc/snort/snort.conf
 
