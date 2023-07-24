@@ -127,5 +127,25 @@ nft add rule ip NAT PREROUTING tcp dport 80 redirect to 8080
 
 ps -elf | grep snort | grep -v grep
 ls /etc/snort
+
+
+
+
+
+# CAPSTONE NOTES
+find / -name hint* 2> /dev/null
+find / -name flag* 2> /dev/null
 cat /etc/snort/snort.conf
+
+tcpdump port http or port ftp or port smtp or port imap or port pop3 or port telnet -l -A | egrep -i -B5 'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|password=|pass:|user:|username:|password:|login:|pass |user '
+
+tcpdump 'tcp[2:2]=23 || tcp[0:2]=23' -XX
+
+##lookup how to find frag offset
+##BPF bad at
+##malware
+
+
+
+
 
