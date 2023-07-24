@@ -145,7 +145,7 @@ tcpdump 'tcp[2:2]=23 || tcp[0:2]=23' -XX
 ##BPF bad at
 ##malware
 
-
+proxychains scp tgt@192.168.1.10:secret.txt .
 
 
 
