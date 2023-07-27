@@ -1,6 +1,6 @@
 GREYMAN
 student@10.50.39.46
-
+http://10.50.20.250:8000/challenges
 
 Phase
 1: Mission Definitin
