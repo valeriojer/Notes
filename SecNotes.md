@@ -1,6 +1,9 @@
 GREYMAN
-student@10.50.39.46
+student@10.50.39.46 9MaGX5PmoRtsLKk
 http://10.50.20.250:8000/challenges
+
+linops
+10.50.36.67
 
 Phase
 1: Mission Definitin
@@ -20,4 +23,5 @@ site: marines.mil covid 19
 site: marines.mil filetype:pdf "covid 19"
 
  
-9MaGX5PmoRtsLKk
+# Recon 
+for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
