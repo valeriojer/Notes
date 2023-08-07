@@ -4,6 +4,9 @@ http://10.50.20.250:8000/challenges
 
 linops
 10.50.36.67
+winops
+10.50.26.46
+
 
 Phase
 1: Mission Definitin
