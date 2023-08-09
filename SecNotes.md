@@ -93,3 +93,6 @@ procmon
 crl L
 path containt dll
 -p windows/exec CMD='cmd.exe /C "whoami" > C:\ p\whami.txt' -f dll > sspiclr dll
+
+LINUX
+
