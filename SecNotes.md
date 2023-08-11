@@ -8,6 +8,8 @@ winops
 10.50.26.46
 xfreerdp /u:student /v:10.50.26.46 /dynamic-resolution +glyph-cache +clipboard
 
+DRY Run
+10.50.34.92
 
 Phase
 1: Mission Definitin
@@ -95,4 +97,10 @@ path containt dll
 -p windows/exec CMD='cmd.exe /C "whoami" > C:\ p\whami.txt' -f dll > sspiclr dll
 
 LINUX
+
+
+dry run
+file upload
+/etc/host for another box
+a' OR 1='1
 
