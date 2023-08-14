@@ -103,4 +103,4 @@ dry run
 file upload
 /etc/host for another box
 a' OR 1='1
-
+find / -name hint* 2> /dev/null
