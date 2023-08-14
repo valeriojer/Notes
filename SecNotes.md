@@ -102,5 +102,29 @@ LINUX
 dry run
 file upload
 /etc/host for another box
+
+review
+nmap -v -sT -Pn -T4 -sV --script=http-enmu.nse
+check for robots.txt
+check all pages
+--files to look for /dir tranversel
+ etc/passwd
+ etc/hosts
+ etc/group
+ etc/network
+ etc/resolve.conf
+-- Username and password /sql inject
+A' OR 1='1
+(dev tool network) switch to raw to get post to get
+2 types of encode ROT13 and BASE64
+-- recon new box
+sudo -l
+ping sweep
+look at cron
+find perm
+nmap
+
+
+
 a' OR 1='1
 find / -name hint* 2> /dev/null
