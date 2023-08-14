@@ -22,7 +22,7 @@ Phase
 exploit-db.com
 virustotal
 
-
+./func <<< $(./buff)
 # google hacking
 site: marines.mil
 site: marines.mil covid 19
@@ -102,6 +102,8 @@ LINUX
 dry run
 file upload
 /etc/host for another box
+./func <<< $(./buff)
+
 # Scripts
 http://10.50.29.85:9000/
 review
@@ -138,3 +140,4 @@ task scheclde
 
 a' OR 1='1
 find / -name hint* 2> /dev/null
+scp map.png student@10.50.36.67:.
