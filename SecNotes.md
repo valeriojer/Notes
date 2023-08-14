@@ -123,7 +123,16 @@ ping sweep
 look at cron
 find perm
 nmap
-
+-- priv esc
+https://gtfobins.github.io/
+-- windows
+regedit
+services
+netstat -ano
+net users 
+net localgroup
+task scheclde
+-- win buff overflow
 
 
 a' OR 1='1
