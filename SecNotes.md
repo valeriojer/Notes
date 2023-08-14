@@ -102,7 +102,8 @@ LINUX
 dry run
 file upload
 /etc/host for another box
-
+# Scripts
+http://10.50.29.85:9000/
 review
 nmap -v -sT -Pn -T4 -sV --script=http-enmu.nse
 check for robots.txt
