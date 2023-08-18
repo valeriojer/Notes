@@ -80,3 +80,43 @@ Levels of Warfare
   KLE (Friendly with neutral leaders)
   
 08963186 - 08767538
+
+___
+# Electro Spectrum/Warfare
+(EMS)
+used for Communication (main)
+Principles
+  National Defense Strategy(NDS)
+
+Joint Electromagnetic Spectrum Operations(JEMSO)
+  CO
+  SPACE
+  LAND,AIR,MARITIME
+Electromagnetic Operational Environment (EMOE)
+  Maneuver space, battle space, 
+  leading factor in land air and sea
+EMOE Complexity
+  Contested
+  Congested
+  constrained
+
+(EW)
+3 major subdiv
+Electromagnetic Attack(EA)
+OFF
+  Jamming
+  Directed Energy Weapons
+  EM Pulse
+  Deception
+Electromagnetic Protection(EP)
+  without significantly degrading
+    De-Confliction (no toe stepping)
+    Emission control
+    Electromagnetic Masking
+    Electromagnetic Security
+Electromagnetic Support(ES)
+  combat information
+  immediate use
+    Electromagnetic Reconnaissance
+    Threat Warning
+    Direction Finding
