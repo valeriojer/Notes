@@ -126,7 +126,7 @@ Compents
   Space Situational Awareness(SSA)
     predictive knowledge
     foundmental
-  Space Controll
+  Space Control
     OSC  
       deceive,disrupt,deny,degrade,destroy
     DSC
