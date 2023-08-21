@@ -248,3 +248,38 @@ USCYBERCOM
   
 
 05334892-05661782
+___
+DAY 3
+___
+
+# Infrastructure
+JMOC for resoure allowcations
+
+CrashHeader CRHE 
+ETERNAL DARKNESS ED  
+TotemStone TOST
+Valyrian Tower VT
+Cosmic Fire COFI
+Joint Common Access Platform JCAP
+Twisty Beacon TB
+
+Platform + Access + Capabilites = Effects Supporting Warfighter
+
+Initial Access is the basis for all network exploitation
+Logical Access 
+  Reconnaissance
+    Active
+      Direct website Access / human contact/ network scanning/ network monitoring
+    Passive
+      web browsing
+Physical Access
+  human contact
+  social Engineering
+  Dircet access
+Concealment
+  Entrenchment
+
+Capabilities
+  Cyberspace Attack
+  Non-cyber-attack 
+  
