@@ -299,6 +299,19 @@ Capabilities
     Access
     Time
 
+# DoDIN and DoDIN OPS
+JFHQ-DoDIN 
+  Secure, Operate and defend the dod information network
+
+CSSP 
+
+DISN is the Core of DoDIN
+
+Organize 
+Secure
+Operate
+Defend
+
 
 05435994
 01746518
