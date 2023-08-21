@@ -283,3 +283,22 @@ Capabilities
   Cyberspace Attack
   Non-cyber-attack 
   
+# Offensive Cyberspace Med..
+  project power through cyberspace
+  sensitivite careful planning and deconfliction IC usg partners
+
+  CMT Structure
+    Intelligence element
+    support element
+    5 mission element
+
+  Requirements 
+    Intelligence
+    Capability
+    Authority
+    Access
+    Time
+
+
+05435994
+01746518
