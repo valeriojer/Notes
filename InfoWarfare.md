@@ -310,7 +310,10 @@ DISN is the Core of DoDIN
 Organize 
 Secure
 Operate
-Defend
+extend
+configure
+maintain
+
 
 
 05435994
