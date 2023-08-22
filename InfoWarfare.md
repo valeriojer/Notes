@@ -318,3 +318,23 @@ maintain
 
 05435994
 01746518
+___
+day 3
+____
+
+# Defensive Cyberspace Methodologies
+Active threats 
+is responses
+
+Objectives
+  Gain time
+  Deter,Deny and or defeat Adversary
+  Defend critical Assest
+  Control key Terrain in cyberspace
+
+Deployable Mission Support System (DMSS)
+
+Solo Mission
+Formation Mission
+Combined Mission
+
